@@ -1,2 +1,4 @@
 # Mac Finder window layout
 .DS_Store
+# PyCharm config files
+.idea
