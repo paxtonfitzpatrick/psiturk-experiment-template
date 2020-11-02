@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM python:3.6-stretch
 
 LABEL maintainer="Paxton Fitzpatrick <Paxton.C.Fitzpatrick@Dartmouth.edu>" version="1.0"
 
@@ -10,13 +10,12 @@ WORKDIR $experiment_dir
 
 RUN apt-get update --fix-missing \
     && apt-get install -y eatmydata \
-    && eatmydata apt-get install -y --no-install-recommends \
-        procps \
-        python3.6 \
-        vim \
+    && eatmydata apt-get install -y --no-install-recommends vim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && pip install \
         psiturk==2.3.11 \
         pymysql==0.10.0 \
     && rm -rf ~/.cache/pip
+
+CMD ["bash"]

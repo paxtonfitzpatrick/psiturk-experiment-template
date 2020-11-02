@@ -2,6 +2,7 @@ version: '3'
 services:
 
   psiturk:
+    container_name: my-experiment
     build:
       context: .
       args:
@@ -13,6 +14,7 @@ services:
     restart: unless-stopped
 
   db:
+    container_name: my-experiment-db
     image: mysql:5.7
     volumes:
      - ./data/db:/var/lib/mysql
@@ -24,11 +26,13 @@ services:
       MYSQL_PASSWORD: psiturk
 
   adminer:
+    container_name: my-experiment-adminer
     image: adminer:latest
     ports:
       - 127.0.0.1:8080:8080
 
   nginx:
+    container_name: my-experiment-nginx
     image: nginx:latest
     restart: unless-stopped
     ports:
