@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  psiturk:
+    build:
+      context: .
+      args:
+        experiment_dir: exp
+    volumes:
+      - ./exp:/exp
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+  db:
+    image: mysql:5.7
+    volumes:
+     - ./data/db:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: participants
+      MYSQL_USER: paxton
+      MYSQL_PASSWORD: psiturk
+
+  adminer:
+    image: adminer:latest
+    ports:
+      - 127.0.0.1:8080:8080
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./exp:/var/www/exp:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf
