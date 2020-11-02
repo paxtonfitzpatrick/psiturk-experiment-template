@@ -1,3 +1,5 @@
+# MySQL database with participant data
+data/db
 # Mac Finder window layout
 .DS_Store
 # PyCharm config files
