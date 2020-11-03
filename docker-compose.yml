@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        experiment_dir: exp
+        experiment_dir: /exp
     volumes:
       - ./exp:/exp
     tty: true
