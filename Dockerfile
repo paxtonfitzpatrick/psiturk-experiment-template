@@ -14,8 +14,11 @@ RUN apt-get update --fix-missing \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && pip install \
-        psiturk==2.3.11 \
+        psiturk==2.3.8 \
         pymysql==0.10.0 \
+        python-Levenshtein==0.12.0 \
     && rm -rf ~/.cache/pip
 
 CMD ["bash"]
+
+EXPOSE 22362
