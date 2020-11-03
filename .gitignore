@@ -1,5 +1,7 @@
 # MySQL database with participant data
 data/db
+# file with psiTurk and AWS account credentials
+exp/.psiturkconfig
 # Mac Finder window layout
 .DS_Store
 # PyCharm config files
