@@ -1,10 +1,19 @@
+// create psiturk instance
 const psiturk = new PsiTurk(uniqueId, adServerLoc, mode);
 
-const N_TRIALS = 4,
-  STIM_DURATION = 1500,
+const N_TRIALS = 4,    // number of times *each* stimulus is shown (random order)
+  STIM_DURATION = 1500,    // ms
   RESPONSE_LETTER = 'f';
 const RESPONSE_KEYCODE = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(RESPONSE_LETTER),
   experiment_timeline = [];
+
+const fullscreen = {
+    type: "fullscreen",
+    fullscreen_mode: true,
+    message: "<p>Click the button below to make this window full-screen</p>",
+    button_label: "Enter full-screen"
+}
+experiment_timeline.push(fullscreen);
 
 const welcome = {
     type: "html-keyboard-response",
@@ -34,7 +43,7 @@ const stimuli = [
 
 const single_trial = {
     type: "image-keyboard-response",
-    stimulus: jsPsych.timelineVariable('image'),
+    stimulus: jsPsych.timelineVariable('image'),    // defer to all_trials
     choices: [RESPONSE_LETTER],
     stimulus_duration: STIM_DURATION,
     response_ends_trial: false,
@@ -47,6 +56,7 @@ const single_trial = {
     }
 };
 
+// N_TRIALS *sets* of randomly ordered stimuli
 const all_trials = {
     timeline: [single_trial],
     timeline_variables: stimuli,
