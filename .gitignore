@@ -2,7 +2,13 @@
 data/db
 # file with psiTurk and AWS account credentials
 exp/.psiturkconfig
+# log of psiTurk server stdin
+exp/.psiturk_history
+# Gunicorn server log
+exp/server.log 
 # Mac Finder window layout
 .DS_Store
 # PyCharm config files
 .idea
+# Python byte code
+*__pycache__
