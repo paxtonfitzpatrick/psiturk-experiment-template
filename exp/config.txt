@@ -1,10 +1,10 @@
 [HIT Configuration]
 title = Example MTurk experiment
-description = Judge the color of a series of words.
+description = A very basic Go/No-go task
 amt_keywords = Perception, Psychology
 organization_name = Dartmouth College
 browser_exclude_rule = MSIE, mobile, tablet
-contact_email_on_error = Paxton.C.Fitzpatrick@Dartmouth.edu
+contact_email_on_error = example@email.com
 lifetime = 1
 ad_group = Example Experiments
 allow_repeats = false
