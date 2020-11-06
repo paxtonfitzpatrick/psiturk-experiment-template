@@ -1,0 +1,4 @@
+# ignore everything...
+*
+# ...except this file so git tracks the empty directory
+!.gitignore
