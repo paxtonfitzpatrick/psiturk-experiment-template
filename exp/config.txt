@@ -1,12 +1,12 @@
 [HIT Configuration]
-title = Stroop task
+title = Example MTurk experiment
 description = Judge the color of a series of words.
 amt_keywords = Perception, Psychology
-organization_name = New Great University
+organization_name = Dartmouth College
 browser_exclude_rule = MSIE, mobile, tablet
-contact_email_on_error = yourmail@gmail.com
-lifetime = 24
-ad_group = Default psiTurk Stroop Example
+contact_email_on_error = Paxton.C.Fitzpatrick@Dartmouth.edu
+lifetime = 1
+ad_group = Example Experiments
 allow_repeats = false
 us_only = true
 approve_requirement = 95
@@ -35,10 +35,5 @@ num_counters = 1
 
 [Shell Parameters]
 launch_in_sandbox_mode = true
-
-# If you are not using the psiturk ad server, set `use_psiturk_ad_server` to `false` and point `ad_location` to your proxy server <host> and <port>. Format the ad_location like this:
-#
-#   https://<host>:<port>/ad 
-
 use_psiturk_ad_server = true
 ad_location = false
