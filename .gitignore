@@ -1,7 +1,7 @@
 # MySQL database with participant data
 data/db
 # file with psiTurk and AWS account credentials
-exp/.psiturkconfig
+# exp/.psiturkconfig
 # log of psiTurk server stdin
 exp/.psiturk_history
 # Gunicorn server log
