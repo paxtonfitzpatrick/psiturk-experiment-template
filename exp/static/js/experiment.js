@@ -3,18 +3,20 @@ const psiturk = new PsiTurk(uniqueId, adServerLoc, mode);
 const N_TRIALS = 4,
   STIM_DURATION = 1500,
   RESPONSE_LETTER = 'f';
-const RESPONSE_KEYCODE = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(RESPONSE_LETTER);
+const RESPONSE_KEYCODE = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(RESPONSE_LETTER),
+  experiment_timeline = [];
 
 const welcome = {
     type: "html-keyboard-response",
     stimulus: "Welcome to the experiment! Press any key to begin."
 };
+experiment_timeline.push(welcome);
 
 const go_nogo_instructions = {
     type: "html-keyboard-response",
     stimulus: "<p>In this experiment, a circle will appear in the center "
       + "of the screen.</p><p>If the circle is <span style='color:blue'>blue</span>, "
-      + "press the letter <strong>F</strong> on the keyboard as fast as you can.</p>"
+      + "press the letter \"<strong>f</strong>\" on the keyboard as fast as you can.</p>"
       + "<p>If the circle is <span style='color:orange'>orange</span>, <strong>do not press "
       + "any key</strong>.</p><div style='width: 700px;'><div style='float: left;'>"
       + "<img src='/static/images/blue.png'><p class='small'><strong>Press the F key</strong>"
@@ -23,6 +25,7 @@ const go_nogo_instructions = {
       + "<p>Press any key to begin.</p>",
     post_trial_gap: 2000
 };
+experiment_timeline.push(go_nogo_instructions);
 
 const stimuli = [
   {image: "/static/images/blue.png", data: {correct_response: RESPONSE_KEYCODE}},
@@ -50,6 +53,7 @@ const all_trials = {
     repetitions: N_TRIALS,
     randomize_order: true
 };
+experiment_timeline.push(all_trials)
 
 const debrief = {
     type: "html-button-response",
@@ -57,9 +61,7 @@ const debrief = {
     stimulus: "<p><strong>Thank you for participating!</strong>"
       + "<p>Press the <strong>Finish</strong> button to complete the experiment.</p>"
 };
-
-const experiment_timeline = [welcome, go_nogo_instructions, all_trials, debrief];
-
+experiment_timeline.push(debrief);
 
 jsPsych.init({
     timeline: experiment_timeline,
