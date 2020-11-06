@@ -5,17 +5,14 @@
  * experiments look polished without any additional styles.
  */
 
- /* Container holding jsPsych content */
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+/* Container holding jsPsych content */
 
  .jspsych-display-element {
    display: flex;
    flex-direction: column;
-   /*justify-content: center;
-   align-items: center;*/
-   /*height: 100%;
-   width: 100%;*/
-   overflow-y: scroll;
-
+   overflow-y: auto;
  }
 
  .jspsych-display-element:focus {
@@ -24,15 +21,13 @@
 
  .jspsych-content-wrapper {
    display: flex;
-   /*justify-content: center;
-   align-items: center;*/
-   margin: auto; /* this does the same thing as above two lines in this case */
+   margin: auto;
    flex: 1 1 100%;
    width: 100%;
  }
 
  .jspsych-content {
-   max-width: 1000px; /*70%;this is mainly an IE 10-11 fix */
+   max-width: 95%; /* this is mainly an IE 10-11 fix */
    text-align: center;
    margin: auto; /* this is for overflowing content */
  }
@@ -45,11 +40,7 @@
    align-items: center;
  }
 
-
-
 /* fonts and type */
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
 .jspsych-display-element {
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -59,7 +50,7 @@
 
 /* Form elements like input fields and buttons */
 
-input[type="text"] {
+.jspsych-display-element input[type="text"] {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 14px;
 }
