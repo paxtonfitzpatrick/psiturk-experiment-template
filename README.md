@@ -97,24 +97,6 @@ First, ensure that you're running in live mode (the shell prompt should read "`m
 ### Approving, rejecting, and bonusing workers
 see the psiTurk docs page on [worker commands](https://psiturk.readthedocs.io/en/latest/command_line/worker.html?highlight=approv#worker-command-subcommands) for a full guide to managing completed HITs
 
-### Shutting down the experiment server
-1. Switch the psiTurk server off
-    ```
-    [psiTurk server:on mode:sdbx #HITs:0]$ server off
-    Shutting down experiment server at pid b'XXX'...
-    Please wait. This could take a few seconds.
-    Killed
-    ```
-2. exit the psiTurk shell
-    ```
-    [psiTurk server:off mode:sdbx #HITs:0]$ exit
-    ```
-3. exit the psiTurk container
-    ```shell
-    root@dfeef3fee90e:/exp# exit
-    exit
-    ```
-
 
 ## Resources
 ### Relevant documentation
@@ -122,6 +104,7 @@ see the psiTurk docs page on [worker commands](https://psiturk.readthedocs.io/en
     - [Getting setup with psiturk.org](https://psiturk.readthedocs.io/en/latest/psiturk_org_setup.html)
     - [Getting setup with Amazon Mechanical Turk](https://psiturk.readthedocs.io/en/latest/amt_setup.html)
     - [Guide to `config.txt` fields](https://psiturk.readthedocs.io/en/latest/configuration.html#local-configuration-file)
+    - [psiTurk shell commands](https://psiturk.readthedocs.io/en/latest/command_line_overview.html)
 - [jsPsych](https://www.jspsych.org/)
     - [core library API](https://www.jspsych.org/core_library/jspsych-core/)
     - [plugins](https://www.jspsych.org/plugins/overview/)
@@ -146,17 +129,3 @@ see the psiTurk docs page on [worker commands](https://psiturk.readthedocs.io/en
     - [Docker image reference](https://hub.docker.com/_/adminer)
     - [plugins bundled with image](https://github.com/vrana/adminer/tree/master/plugins)
     - [plugin docs](https://www.adminer.org/plugins/)
-
-### Other resources
-- [DB Browser for SQLite](https://sqlitebrowser.org/)
-    - If you don't plan on posting your experiment on MTurk and a
-- `CDL-docker-stacks`
-    - a repository of lightweight, hierarchically built Docker images for common neuroscience/data science uses
-    - [pre-built images are available on Docker Hub](https://hub.docker.com/u/contextlab)
-    - [Source code is available on GitHub](https://github.com/ContextLab/CDL-docker-stacks)
-- [psiTurk experiment exchange](https://psiturk.org/ee/)
-
-
-## Notes
-- Paring down the template for exclusively in-person experiments
-    - The provided template will work for both in-person and online deployment. However, if you know you will only be collecting in-person data and want to reduce the size of your experiment, you can cut out the three support services (`nginx`, `MySQL`, `Adminer`) and run
