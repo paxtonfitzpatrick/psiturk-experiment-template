@@ -60,7 +60,7 @@ With the experiment server *on*, run:
 Launching browser pointed at your randomized debug link, feel free to request another.
 	http://127.0.0.1:80/ad?assignmentId=debugXXXXXX&hitId=debugXXXXXX&workerId=debugXXXXXX&mode=debug
 ```
-Note that the browswer will not launch automatically because the server is running inside the Docker container. Copy/paste the generated link into a browser.
+Note that the browser will not launch automatically because the server is running inside the Docker container. Copy/paste the generated link into a browser.
 
 ### Testing your experiment in the MTurk sandbox
 First, ensure that you're running in sandbox mode (the shell prompt should read "`mode:sdbx`").  With the experiment server *on*, run:
